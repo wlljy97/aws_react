@@ -1,10 +1,10 @@
 import React from 'react';
 import Input from '../Atom/Input/Input';
 
-function UsernameInput(props) {
+function UsernameInput({ onChange }) {
     return (
         <div>
-            <Input />
+            <Input name={"username"} onChange={onChange} />
         </div>
     );
 }

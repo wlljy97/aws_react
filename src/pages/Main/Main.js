@@ -5,7 +5,7 @@ import PasswordInput from '../../components/PasswordInput/PasswordInput';
 
 function Main(props) {
     let todoInputValue = null;
-    const [ todoContent, setTodoContent ] = useState("");
+    // const [ todoContent, setTodoContent ] = useState("");
     const [ todoContentArray, setTodoContentArray ] = useState([]); 
     const [ user, setUser ] = useState({
         username: "",
@@ -17,7 +17,16 @@ function Main(props) {
     }
 
     const handleUserInfoChange = (e) => {
+        const { name, value } = e.target
 
+        console.log(`name: ${name}, value: ${value}`);
+
+        const userObj = {
+            ...user,
+            [name]: value
+        }
+
+        setUser(userObj);
     }
 
     const handleAddClick = () => {

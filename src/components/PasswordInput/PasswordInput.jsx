@@ -4,7 +4,7 @@ import Input from '../Atom/Input/Input';
 function PasswordInput({ onChange }) {
     return (
         <div>
-            <Input type={"password"} onChange={onChange} />
+            <Input type={"password"} name={"password"} onChange={onChange} />
         </div>
     );
 }

@@ -1,15 +1,13 @@
 import React from 'react';
 
-function Input({ type, name, isDisabled, isRequired, isAutoFocus, placeholder, value, onChange, onKeyUp }) {
+function Input({ type, name, isDisabled, isAutoFocus, placeholder, onChange, onKeyUp }) {
     return (
     <>
         <input type={type}
             name={name} 
             disabled={isDisabled} 
-            required={isRequired} 
             autoFocus={isAutoFocus} 
-            placeholder={placeholder} 
-            value={value} 
+            placeholder={placeholder}
             onChange={onChange} 
             onKeyUp={onKeyUp} 
         />
@@ -20,10 +18,8 @@ function Input({ type, name, isDisabled, isRequired, isAutoFocus, placeholder, v
 Input.defaultProps = {
     type: "text",
     isDisabled: false,
-    isRequired: false,
     isAutoFocus: false,
     placeholder: "",
-    value: "",
     onChange: null,
     onKeyUp: null
 }
