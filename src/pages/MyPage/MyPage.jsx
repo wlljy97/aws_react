@@ -12,15 +12,16 @@ function MyPage(props) {
     
     const [ profileImg, setProfileImg ] = useState(!!profileImgSrc ? profileImgSrc : defaultProfileImgSrc);
 
-    const profileFileInput = useRef(); // document 대신 ref 를 사용
+    const profileFileInput = useRef(); // document.requierment 대신 ref 를 사용 선택할 때 사용
 
     const localStorgeUser = JSON.parse(localStorage.getItem("user"));
 
     let user = {
-        username: localStorgeUser.username && localStorgeUser.username,
-        name: localStorgeUser.name && localStorgeUser.name,
-        email: localStorgeUser.email && localStorgeUser.email
+        username: localStorgeUser?.username && localStorgeUser.username,
+        name: localStorgeUser?.name && localStorgeUser.name,
+        email: localStorgeUser?.email && localStorgeUser.email
     }
+    // '?' : 없을 수 있다.
 
     const handleProfileImgChangeClick = () => {
         profileFileInput.current.click();
@@ -31,6 +32,7 @@ function MyPage(props) {
 
         reader.onload = (e) => {  // 함수실행x 함수정의
             setProfileImg(e.target.result); //result 안에는 e.target.files[0] 값이 있음
+            console.log(profileImg);
         }
 
         reader.readAsDataURL(e.target.files[0]);

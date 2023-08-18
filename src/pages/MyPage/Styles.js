@@ -50,13 +50,13 @@ export const SFileHidden = css`
 export const SBtn = css`
     margin: 5px;
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
 
     border: 1px solid #dbdbdb;
     border-radius: 5px;
-    width: auto;
+    width: 100%;
     cursor: pointer;
 `;
 
